@@ -8,7 +8,7 @@
 0. [Citation](#citation)
 
 ## Introduction
-The code and CNN models verify the results in our paper. The models for efficient depth estimation are available in the directory "results". The results from RGB images are the same as that in the paper when inputs are images on the NYU Depth V2<a href="http://datasets.lids.mit.edu/sparse-to-dense/data/nyudepthv2.tar.gz">testing dataset</a>. Additionally, our provided code can be used for inference on arbitrary images.
+The code and CNN models verify the results in our paper. The models for efficient depth estimation are available in the directory "results". The results are the same as that in the paper when inputs are images on the NYU Depth V2<a href="http://datasets.lids.mit.edu/sparse-to-dense/data/nyudepthv2.tar.gz"> testing dataset</a>. Additionally, our provided code can be used for inference on arbitrary images.
 
 ## Quick Guide
 Our models can be run with Python 3.6 and PyTorch 1.0/1.2.
@@ -29,7 +29,7 @@ python main.py -b 1 -s 0 --data /
 /home/star/data/nyudepthv2 --epochs 30 --optimize sgd --activation relu --dataset nyudepth --lr 0.01 --evaluate  
 ```
 
-If you need the accuracy of MDE, please modify the line (the file main.py) which is best_model_filename = os.path.join(output_directory, 'mobilenetv2blconv7dw_0.597.pth.tar').
+If you need the accuracy of MDE, please modify the line (in the file main.py) which is "best_model_filename = os.path.join(output_directory, 'mobilenetv2blconv7dw_0.597.pth.tar')".
 The line should be changed to the following line: best_model_filename = os.path.join(output_directory, 'mobilenetv2blconv7dw_0.579.pth.tar').  
 Then, run the following command and you can get the results of MDE.
 ```bash
@@ -46,7 +46,7 @@ If you need our runtime of optimized models on edge devices, please run the foll
 ```bash
 python tune_run.py 
 ```
-For example, on the device Jetson Nano, we obtained the runtime of the optimized models and three files: deploy_graph.json, deploy_lib.tar, and deploy_param.params. The image "UP Board_CPU_results.png" displays our runtime on UP Board CPU.  The image "Nano_GPU_results.jpg" displays our runtime on Nano GPU.
+For example, on the device Jetson Nano, we obtained the runtime of the optimized models and three files: deploy_graph.json, deploy_lib.tar, and deploy_param.params. The image "UP Board_CPU_results.png" displays our runtime on UP Board CPU.  The image "Nano_GPU_results.jpg" displays our runtime on Nano GPU. The results on different hardware architectures are listed in  our papers. 
 #### Citation
 If you use our method or code in your work, please consider citing our paper.
 The citation will be available after the paper is published.

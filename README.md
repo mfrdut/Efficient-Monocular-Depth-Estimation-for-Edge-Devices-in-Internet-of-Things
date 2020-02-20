@@ -46,7 +46,7 @@ If you need our runtime of optimized models on edge devices, please run the foll
 ```bash
 python tune_run.py 
 ```
-For example, on the device Jetson Nano, we obtained the runtime of the optimized models and three files: deploy_graph.json, deploy_lib.tar, and deploy_param.params. The image "UP Board_CPU_results.png" displays our runtime on UP Board CPU.  The image "Nano_GPU_results.jpg" displays our runtime on Nano GPU. The results on different hardware architectures are listed in  our papers. 
+For example, on the device Jetson Nano, we obtained the runtime of the optimized models and three files: deploy_graph.json, deploy_lib.tar, and deploy_param.params. The image "UP Board_CPU_results.png" displays our runtime on UP Board CPU.  The image "Nano_GPU_results.jpg" displays our runtime on Nano GPU. The results on different hardware architectures are listed in  our papers.
 #### Citation
 If you use our method or code in your work, please consider citing our paper.
 The citation will be available after the paper is published.

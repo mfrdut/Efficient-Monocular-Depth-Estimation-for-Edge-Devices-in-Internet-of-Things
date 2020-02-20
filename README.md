@@ -17,10 +17,10 @@ Download the preprocessed dataset <a href="http://datasets.lids.mit.edu/sparse-t
 sudo apt-get install -y libhdf5-serial-dev hdf5-tools
 pip3 install matplotlib h5py scikit-image imageio opencv-python
 ```
-Additionally, please install <a href="https://docs.tvm.ai/install/index.html">TVM</a> on the edge devices, if you need the results of the optimized MDE. Here, we adopt the TVM 0.5 to optimize our pruned models.
+Additionally, please install <a href="https://docs.tvm.ai/install/index.html">TVM</a> on the edge devices, if you need the results of the optimized MDE. Here, we adopt the TVM-0.5, LLVM-4.0, and CUDA-10.0. In detail, on TX2 CPU, LLVM-4.0 was installed. On UP Board CPU, LLVM-4.0 was installed. On TX2 GPU, CUDA-10.0 was installed.  On Nano GPU, CUDA-10.0 was installed. 
 
 ## Depth estimation models
-Our models can be downloaded in the directory: results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd. These models are used to acquire the results reported in our paper on the benchmark datasets NYU-Depth-v2. The MDE model is mobilenetv2blconv7dw_0.597.pth.tar. The pruned MDE model is mobilenetv2blconv7dw_0.579.pth.tar.
+Our models can be downloaded in the directory: results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd. These models are used to acquire the results in our paper on the benchmark datasets NYU-Depth-v2. The MDE model is mobilenetv2blconv7dw_0.597.pth.tar. The pruned MDE model is mobilenetv2blconv7dw_0.579.pth.tar.
 
 ## Results
 If you need the results of the pruned MDE, please run the file main.py. The command is:

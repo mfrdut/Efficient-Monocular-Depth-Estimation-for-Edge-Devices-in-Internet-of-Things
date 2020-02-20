@@ -21,7 +21,7 @@ sudo apt-get install -y libhdf5-serial-dev hdf5-tools
 pip3 install matplotlib h5py scikit-image imageio opencv-python
 ```
 ## Depth estimation models
-Our models can be downloaded in the above directory: results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd. These models are used to acquire the results reported in our paper on the benchmark datasets NYU-Depth-v2 for efficient depth estimation. The MDE model is mobilenetv2blconv7dw_0.597.pth.tar. The pruned MDE model is mobilenetv2blconv7dw_0.579.pth.tar.
+Our models can be downloaded in the above directory: results\/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd. These models are used to acquire the results reported in our paper on the benchmark datasets NYU-Depth-v2 for efficient depth estimation. The MDE model is mobilenetv2blconv7dw_0.597.pth.tar. The pruned MDE model is mobilenetv2blconv7dw_0.579.pth.tar.
 
 ## Results
 Run the file main.py to obtain the results of the pruned MDE in this paper "Efficient Monocular Depth Estimation for Edge Devices in Internet of Things". The command is:

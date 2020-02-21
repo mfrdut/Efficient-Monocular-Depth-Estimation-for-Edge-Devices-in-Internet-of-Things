@@ -38,7 +38,7 @@ python main.py -b 1 -s 0 --data /
 /home/star/data/nyudepthv2 --epochs 30 --optimize sgd --activation relu --dataset nyudepth --lr 0.01 --evaluate  
 ```
 
-If you need the MACs of MDE, pruned MDE, and other models without optimization, please use the command like those:
+If you need the MACs of MDE, pruned MDE, and other models without optimization, please use the commands like those:
 ```bash
 import torch
 from torchvision.models import resnet50

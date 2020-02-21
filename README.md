@@ -47,7 +47,7 @@ export TVM_HOME=/path/to/tvm
 export PYTHONPATH=$PYTHONPATH:~/tvm/python
 ```
 ## Depth estimation models
-Our models can be downloaded in the directory: <a href="https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/tree/master/results/Dataset%3Dnyudepth.nsample%3D0.lr%3D0.01.bs%3D1.optimizer%3Dsgd"> results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd</a>. The MDE model is mobilenetv2blconv7dw_0.597.pth.tar. The pruned MDE model is mobilenetv2blconv7dw_0.579.pth.tar.
+Our models can be downloaded in the directory: <a href="https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/tree/master/results/Dataset%3Dnyudepth.nsample%3D0.lr%3D0.01.bs%3D1.optimizer%3Dsgd"> results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd</a>. The mobilenetv2blconv7dw_0.597.pth.tar is our MDE model. The mobilenetv2blconv7dw_0.579.pth.tar is the pruned MDE.
 
 ## Results
 If you need the accuracy of the pruned MDE, please run the file main.py. The command is
@@ -64,7 +64,7 @@ python main.py -b 1 -s 0 --data /
 /home/star/data/nyudepthv2 --epochs 30 --optimize sgd --activation relu --dataset nyudepth --lr 0.01 --evaluate  
 ```
 
-If you need the MACs of MDE, pruned MDE, and other models without optimization, please use the commands like those:
+If you need the MACs of our pruned MDE, MDE, and other models without optimization, please use the commands like those:
 ```bash
 import torch
 from torchvision.models import resnet50
@@ -76,7 +76,7 @@ macs = profile_macs(resnet50, inputs)
 ```
 Here, please ensure that you have installed the latest version of <a href="https://github.com/mit-han-lab/torchprofile">torchprofile</a>.
 
-If you need the runtime of MDE, pruned MDE, and other models without optimization, please run the following command.
+If you need the runtime of our pruned MDE, MDE, and other models without optimization, please run the following command.
 ```bash
 python runtime.py
 ```

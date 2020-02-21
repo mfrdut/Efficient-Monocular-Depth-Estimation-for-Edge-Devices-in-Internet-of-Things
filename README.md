@@ -89,7 +89,8 @@ For example, on the device Jetson Nano, we obtained the runtime of the optimized
 
 
 ![Alt text](https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/raw/master/Nano_GPU_results.jpg)
-![Alt text](https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/raw/master/UP\Board_CPU_results.png)
+
+![Alt text](https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/raw/master/UP_Board_CPU_results.png)
 #### Citation
 If you use our methods or code in your work, please consider citing our paper.
 The citation will be available after the paper is published.

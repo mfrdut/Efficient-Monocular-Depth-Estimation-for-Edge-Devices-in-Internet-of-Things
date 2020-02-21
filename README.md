@@ -8,7 +8,7 @@
 0. [Citation](#citation)
 
 ## Introduction
-The code and CNN models verify the results in our paper. The models for efficient depth estimation are available in the directory "results". The results are the same as that in the paper when inputs are images on the NYU Depth V2<a href="http://datasets.lids.mit.edu/sparse-to-dense/data/nyudepthv2.tar.gz"> testing dataset</a>. Additionally, our provided code can be used for inference on arbitrary images.
+The code and CNN models verify the results in our paper. The models for efficient depth estimation are available in the directory "results". The results are the same as those in the paper when inputs are images on the NYU Depth V2<a href="http://datasets.lids.mit.edu/sparse-to-dense/data/nyudepthv2.tar.gz"> testing dataset</a>. Additionally, our provided code can be used for inference on arbitrary images.
 
 ## Quick Guide
 Our models can be run with Python 3.6 and PyTorch 1.0/1.2.
@@ -86,6 +86,7 @@ If you need the runtime of our optimized models on edge devices, please run the 
 python tune_run.py 
 ```
 For example, on the device Jetson Nano, we obtained the runtime of the optimized models and three files: deploy_graph.json, deploy_lib.tar, and deploy_param.params. The image "UP Board_CPU_results.png" displays our runtime on UP Board CPU.  The image "Nano_GPU_results.jpg" displays our runtime on Nano GPU. The results on different hardware architectures are listed in  our papers.
+![Alt text](https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/raw/master/Nano_GPU_results.jpg)
 #### Citation
 If you use our methods or code in your work, please consider citing our paper.
 The citation will be available after the paper is published.

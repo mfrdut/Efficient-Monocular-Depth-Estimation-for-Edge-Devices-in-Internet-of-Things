@@ -16,6 +16,7 @@ We use the preprocessed dataset <a href="http://datasets.lids.mit.edu/sparse-to-
 ```bash
 sudo apt-get install -y libhdf5-serial-dev hdf5-tools
 pip3 install matplotlib h5py scikit-image imageio opencv-python
+pip install --upgrade git+https://github.com/mit-han-lab/torchprofile.git
 ```
 Additionally, please install <a href="https://docs.tvm.ai/install/index.html">TVM</a> on edge devices, if you need the results of the optimized MDE. Here, we adopted the TVM-0.5, LLVM-4.0, and CUDA-10.0. In detail, on TX2 CPU, TVM-0.5 and LLVM-4.0 were installed. On UP Board CPU, TVM-0.5 and LLVM-4.0 were installed. On TX2 GPU, TVM-0.5 and CUDA-10.0 were installed. On Nano GPU, TVM-0.5 and CUDA-10.0 were installed. 
 
@@ -36,6 +37,18 @@ Then, run the following command and you can get the results of MDE.
 python main.py -b 1 -s 0 --data /
 /home/star/data/nyudepthv2 --epochs 30 --optimize sgd --activation relu --dataset nyudepth --lr 0.01 --evaluate  
 ```
+
+If you need the MACs of MDE, pruned MDE, and other models without optimization, please use the command like those:
+```bash
+import torch
+from torchvision.models import resnet50
+
+resnet50 = resnet50()
+inputs = torch.randn(1, 3, 224, 224)
+from torchprofile import profile_macs
+macs = profile_macs(resnet50, inputs)
+```
+Here, please ensure that you have installed the latest version of <a href="https://github.com/mit-han-lab/torchprofile">torchprofile</a>.
 
 If you need the runtime of MDE, pruned MDE, and other models without optimization, please run the following command.
 ```bash

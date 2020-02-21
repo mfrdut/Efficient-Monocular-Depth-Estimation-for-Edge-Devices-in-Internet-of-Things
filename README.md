@@ -41,7 +41,7 @@ cd build
 cmake ..
 make -j8
 ```
-Finally, update the PYTHONPATH environment variable and add the following line in ~/.bashrc. 
+Finally, update the PYTHONPATH environment variable and add the following lines in ~/.bashrc. 
 ```bash
 export TVM_HOME=/path/to/tvm
 export PYTHONPATH=$PYTHONPATH:~/tvm/python

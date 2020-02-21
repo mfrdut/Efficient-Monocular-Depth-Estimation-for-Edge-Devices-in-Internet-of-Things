@@ -86,7 +86,10 @@ If you need the runtime of our optimized models on edge devices, please run the 
 python tune_run.py 
 ```
 For example, on the device Jetson Nano, we obtained the runtime of the optimized models and three files: deploy_graph.json, deploy_lib.tar, and deploy_param.params. The image "UP Board_CPU_results.png" displays our runtime on UP Board CPU.  The image "Nano_GPU_results.jpg" displays our runtime on Nano GPU. The results on different hardware architectures are listed in  our papers.
+
+
 ![Alt text](https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/raw/master/Nano_GPU_results.jpg)
+![Alt text](https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/raw/master/UP Board_CPU_results.png)
 #### Citation
 If you use our methods or code in your work, please consider citing our paper.
 The citation will be available after the paper is published.

@@ -19,7 +19,7 @@ pip3 install matplotlib h5py scikit-image imageio opencv-python
 pip install --upgrade git+https://github.com/mit-han-lab/torchprofile.git
 ```
 Additionally, please install <a href="https://docs.tvm.ai/install/index.html">TVM</a> on edge devices, if you need the results of the optimized MDE. Here, we adopted the TVM-0.5, LLVM-4.0, and CUDA-10.0. In detail, on TX2 CPU, TVM-0.5 and LLVM-4.0 were installed. On UP Board CPU, TVM-0.5 and LLVM-4.0 were installed. On TX2 GPU, TVM-0.5 and CUDA-10.0 were installed. On Nano GPU, TVM-0.5 and CUDA-10.0 were installed. 
-Build the Shared Library and clone TVM repo from its github:
+To this end, firstly, build the Shared Library and clone TVM repo from its github:
 ```bash
 sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev zlib1g-dev build-essential cmake libedit-dev libxml2-dev
 git clone https://github.com/apache/incubator-tvm tvm

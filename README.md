@@ -18,7 +18,7 @@ sudo apt-get install -y libhdf5-serial-dev hdf5-tools
 pip3 install matplotlib h5py scikit-image imageio opencv-python
 pip install --upgrade git+https://github.com/mit-han-lab/torchprofile.git
 ```
-Additionally, please install <a href="https://docs.tvm.ai/install/index.html">TVM</a> on edge devices, if you need the results of the optimized MDE. Here, we adopted the TVM-0.5, LLVM-4.0, and CUDA-10.0. In detail, on TX2 CPU, TVM-0.5 and LLVM-4.0 were installed. On UP Board CPU, TVM-0.5 and LLVM-4.0 were installed. On TX2 GPU, TVM-0.5 and CUDA-10.0 were installed. On Nano GPU, TVM-0.5 and CUDA-10.0 were installed. 
+Additionally, please install <a href="https://docs.tvm.ai/install/index.html">TVM</a> on edge devices, if you need the results of our optimization. Here, we adopted the TVM-0.5, LLVM-4.0, and CUDA-10.0. In detail, on TX2 CPU, TVM-0.5 and LLVM-4.0 were installed. On UP Board CPU, TVM-0.5 and LLVM-4.0 were installed. On TX2 GPU, TVM-0.5 and CUDA-10.0 were installed. On Nano GPU, TVM-0.5 and CUDA-10.0 were installed. 
 To this end, firstly, build the Shared Library and clone TVM repo from its github:
 ```bash
 sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev zlib1g-dev build-essential cmake libedit-dev libxml2-dev
@@ -47,24 +47,24 @@ export TVM_HOME=/path/to/tvm
 export PYTHONPATH=$PYTHONPATH:~/tvm/python
 ```
 ## Depth estimation models
-Our models can be downloaded in the directory: <a href="https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/tree/master/results/Dataset%3Dnyudepth.nsample%3D0.lr%3D0.01.bs%3D1.optimizer%3Dsgd"> results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd</a>. The mobilenetv2blconv7dw_0.597.pth.tar is our MDE model. The mobilenetv2blconv7dw_0.579.pth.tar is the pruned MDE.
+Our models can be downloaded in the directory: <a href="https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/tree/master/results/Dataset%3Dnyudepth.nsample%3D0.lr%3D0.01.bs%3D1.optimizer%3Dsgd"> results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd</a>. The mobilenetv2blconv7dw_0.579.pth.tar is our original model. The mobilenetv2blconv7dw_0.597.pth.tar is our pruned model.
 
 ## Results
-If you need the accuracy of the pruned MDE, please run the file main.py. The command is
+If you need the accuracy of our pruned model, please run the file main.py. The command is
 ```bash
 python main.py -b 1 -s 0 --data /
 /home/star/data/nyudepthv2 --epochs 30 --optimize sgd --activation relu --dataset nyudepth --lr 0.01 --evaluate  
 ```
 
-If you need the accuracy of MDE, please modify the line (in the file main.py) which is "best_model_filename = os.path.join(output_directory, 'mobilenetv2blconv7dw_0.597.pth.tar')".
+If you need the accuracy of our original model, please modify the line (in the file main.py) which is "best_model_filename = os.path.join(output_directory, 'mobilenetv2blconv7dw_0.597.pth.tar')".
 The line should be changed to the following line: best_model_filename = os.path.join(output_directory, 'mobilenetv2blconv7dw_0.579.pth.tar').  
-Then, run the following command and you can get the results of MDE.
+Then, run the following command and you can get the results of our original model.
 ```bash
 python main.py -b 1 -s 0 --data /
 /home/star/data/nyudepthv2 --epochs 30 --optimize sgd --activation relu --dataset nyudepth --lr 0.01 --evaluate  
 ```
 
-If you need the MACs of our pruned MDE, MDE, and other models without optimization, please use the commands like those:
+If you need the MACs of our pruned model, our original model, and other models without optimization, please use the commands like those:
 ```bash
 import torch
 from torchvision.models import resnet50
@@ -76,12 +76,12 @@ macs = profile_macs(resnet50, inputs)
 ```
 Here, please ensure that you have installed the latest version of <a href="https://github.com/mit-han-lab/torchprofile">torchprofile</a>.
 
-If you need the runtime of our pruned MDE, MDE, and other models without optimization, please run the following command.
+If you need the runtime of our pruned model, our original model, and other models without optimization, please run the following command.
 ```bash
 python runtime.py
 ```
 
-If you need our runtime of optimized models on edge devices, please run the following command.
+If you need our runtime of our optimized models on edge devices, please run the following command.
 ```bash
 python tune_run.py 
 ```

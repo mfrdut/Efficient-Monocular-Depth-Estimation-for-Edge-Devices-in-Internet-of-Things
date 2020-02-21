@@ -47,7 +47,7 @@ export TVM_HOME=/path/to/tvm
 export PYTHONPATH=$PYTHONPATH:~/tvm/python
 ```
 ## Depth estimation models
-Our models can be downloaded in the directory: results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd. The MDE model is mobilenetv2blconv7dw_0.597.pth.tar. The pruned MDE model is mobilenetv2blconv7dw_0.579.pth.tar.
+Our models can be downloaded in the directory: <a href="https://github.com/tutuxh/Efficient-Monocular-Depth-Estimation-for-Edge-Devices-in-Internet-of-Things/tree/master/results/Dataset%3Dnyudepth.nsample%3D0.lr%3D0.01.bs%3D1.optimizer%3Dsgd"> results/Dataset=nyudepth.nsample=0.lr=0.01.bs=1.optimizer=sgd</a>. The MDE model is mobilenetv2blconv7dw_0.597.pth.tar. The pruned MDE model is mobilenetv2blconv7dw_0.579.pth.tar.
 
 ## Results
 If you need the accuracy of the pruned MDE, please run the file main.py. The command is
